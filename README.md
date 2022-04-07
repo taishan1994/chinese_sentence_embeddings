@@ -77,7 +77,7 @@ unsup_esimcse:
 
 还可以去参考：
 
-[NLP-model/model/model/Torch_model/SimCSE-Chinese at main · zhengyanzhao1997/NLP-model (github.com)](https://github.com/zhengyanzhao1997/NLP-model/tree/main/model/model/Torch_model/SimCSE-Chinese)<.>
+[NLP-model/model/model/Torch_model/SimCSE-Chinese at main · zhengyanzhao1997/NLP-model (github.com)](https://github.com/zhengyanzhao1997/NLP-model/tree/main/model/model/Torch_model/SimCSE-Chinese)<br>
 
 [vdogmcgee/SimCSE-Chinese-Pytorch: SimCSE在中文上的复现，有监督+无监督 (github.com)](https://github.com/vdogmcgee/SimCSE-Chinese-Pytorch)<br>
 
