@@ -1,7 +1,7 @@
 # chinese_sentence_embeddings
 bert_avg，bert_whitening，sbert，consert，simcse，esimcse 中文句向量表示
 
-主要是跑了以下[zhoujx4/NLP-Series-sentence-embeddings: NLP句子编码、句子embedding、语义相似度：BERT_avg、BERT_whitening、SBERT、SmiCSE (github.com)](https://github.com/zhoujx4/NLP-Series-sentence-embeddings)的代码。使用的预训练的模型是：hfl_chinese-roberta-wwm-ext。
+主要是跑了以下[zhoujx4/NLP-Series-sentence-embeddings: NLP句子编码、句子embedding、语义相似度：BERT_avg、BERT_whitening、SBERT、SmiCSE (github.com)](https://github.com/zhoujx4/NLP-Series-sentence-embeddings)的代码。使用的预训练的模型是：hfl_chinese-roberta-wwm-ext。其中sup_simcse（SNLI）需要先运行data_utils.py生成SNLI处理后的数据。原始的数据可以去：[https://github.com/pluto-junzeng/CNSD](https://gitee.com/link?target=https%3A%2F%2Fgithub.com%2Fpluto-junzeng%2FCNSD)下载。
 
 ```
 model   dev test
@@ -75,3 +75,12 @@ unsup_esimcse:
 | sup_simcse（SNLI） | 0.6529            | 0.6550             | batch_size=32. max_len=64, epoch=1, lr=2e-5 <br />（感觉这个有问题） |
 | unsup_esimcse      | 0.7901            | 0.7393             | batch_size=32. max_len=64, epoch=4, lr=2e-5                  |
 
+还可以去参考：
+
+[NLP-model/model/model/Torch_model/SimCSE-Chinese at main · zhengyanzhao1997/NLP-model (github.com)](https://github.com/zhengyanzhao1997/NLP-model/tree/main/model/model/Torch_model/SimCSE-Chinese)<.>
+
+[vdogmcgee/SimCSE-Chinese-Pytorch: SimCSE在中文上的复现，有监督+无监督 (github.com)](https://github.com/vdogmcgee/SimCSE-Chinese-Pytorch)<br>
+
+[KwangKa/SIMCSE_unsup: 中文无监督SimCSE Pytorch实现 (github.com)](https://github.com/KwangKa/SIMCSE_unsup)<br>
+
+发现其实代码都是差不多的= =
