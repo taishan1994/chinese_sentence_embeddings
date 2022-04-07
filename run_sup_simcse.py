@@ -20,13 +20,13 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
 # 训练参数
 model_name = 'model_hub/hfl_chinese-roberta-wwm-ext/'
 train_batch_size = 32
-num_epochs = 5
+num_epochs = 1
 max_seq_length = 64
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 device = "cuda:0"
 
 # 模型保存路径
-model_save_path = 'data/output/stsb_simcse-{}-{}-{}'.format("roberta",
+model_save_path = 'output/stsb_simcse-{}-{}-{}'.format("roberta",
                                                             train_batch_size,
                                                             datetime.now().strftime(
                                                                 "%Y-%m-%d_%H-%M-%S"))
@@ -39,7 +39,7 @@ pooling_model = models.Pooling(word_embedding_dimension=word_embedding_model.get
 model = SentenceTransformer(modules=[word_embedding_model, pooling_model], device=device)
 
 # 准备训练集
-snil_vocab = load_snli_vocab("data/cnsd-snli/cnsd_snli_v1.0.trainproceed.txt")
+snil_vocab = load_snli_vocab("data/SNLI/cnsd_snli_v1.0.trainproceed.txt")
 np.random.shuffle(snil_vocab)
 print("The len of snil supervised data is {}".format(len(snil_vocab)))
 train_samples = []

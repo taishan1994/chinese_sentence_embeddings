@@ -29,7 +29,7 @@ device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 device = "cuda:0"
 
 # 模型保存路径
-model_save_path = 'data/output/stsb_esimcse-{}-{}-{}'.format("macbert",
+model_save_path = 'output/stsb_esimcse-{}-{}-{}'.format("macbert",
                                                              train_batch_size,
                                                              datetime.now().strftime(
                                                                  "%Y-%m-%d_%H-%M-%S"))

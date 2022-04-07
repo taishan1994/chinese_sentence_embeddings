@@ -1,7 +1,7 @@
 # chinese_sentence_embeddings
 bert_avg，bert_whitening，sbert，consert，simcse，esimcse 中文句向量表示
 
-主要是跑了以下[zhoujx4/NLP-Series-sentence-embeddings: NLP句子编码、句子embedding、语义相似度：BERT_avg、BERT_whitening、SBERT、SmiCSE (github.com)](https://github.com/zhoujx4/NLP-Series-sentence-embeddings)的代码。使用的预训练的模型是：hfl_chinese-roberta-wwm-ext。run_sup_simcse.py这一个没有跑。
+主要是跑了以下[zhoujx4/NLP-Series-sentence-embeddings: NLP句子编码、句子embedding、语义相似度：BERT_avg、BERT_whitening、SBERT、SmiCSE (github.com)](https://github.com/zhoujx4/NLP-Series-sentence-embeddings)的代码。使用的预训练的模型是：hfl_chinese-roberta-wwm-ext。
 
 ```
 model   dev test
@@ -42,6 +42,17 @@ unsup_simcse:
 2022-04-06 18:29:03 - Euclidean-Distance:	Pearson: 0.7420	Spearman: 0.7432
 2022-04-06 18:29:03 - Dot-Product-Similarity:	Pearson: 0.7550	Spearman: 0.7450
 
+sup_simcse:
+2022-04-07 13:58:43 - Cosine-Similarity :	Pearson: 0.6292	Spearman: 0.6529
+2022-04-07 13:58:43 - Manhattan-Distance:	Pearson: 0.6544	Spearman: 0.6555
+2022-04-07 13:58:43 - Euclidean-Distance:	Pearson: 0.6514	Spearman: 0.6531
+2022-04-07 13:58:43 - Dot-Product-Similarity:	Pearson: 0.6299	Spearman: 0.6548
+
+2022-04-07 13:58:47 - Cosine-Similarity :	Pearson: 0.6400	Spearman: 0.6550
+2022-04-07 13:58:47 - Manhattan-Distance:	Pearson: 0.6684	Spearman: 0.6584
+2022-04-07 13:58:47 - Euclidean-Distance:	Pearson: 0.6631	Spearman: 0.6542
+2022-04-07 13:58:47 - Dot-Product-Similarity:	Pearson: 0.6351	Spearman: 0.6398
+
 unsup_esimcse:
 2022-04-07 10:18:45 - Cosine-Similarity :	Pearson: 0.7881	Spearman: 0.7901
 2022-04-07 10:18:45 - Manhattan-Distance:	Pearson: 0.7738	Spearman: 0.7912
@@ -54,12 +65,13 @@ unsup_esimcse:
 2022-04-07 10:18:49 - Dot-Product-Similarity:	Pearson: 0.7452	Spearman: 0.7379
 ```
 
-| 模型           | Chinese-STS-B-dev | Chinese-STS-B-test | 训练参数                                    |
-| -------------- | ----------------- | ------------------ | ------------------------------------------- |
-| bert_avg       | 0.2549            | 0.2059             | batch_size=32. max_len=64, pooling=cls      |
-| bert_whitening | 0.7583            | 0.6888             | /                                           |
-| sbert          | 0.8257            | 0.7837             | batch_size=32. max_len=64, epoch=2, lr=2e-5 |
-| unsup_consert  | 0.7808            | 0.7241             | batch_size=32. max_len=64, epoch=2, lr=2e-5 |
-| unsup_simcse   | 0.7867            | 0.7454             | batch_size=32. max_len=64, epoch=2, lr=2e-5 |
-| unsup_esimcse  | 0.7901            | 0.7393             | batch_size=32. max_len=64, epoch=4, lr=2e-5 |
+| 模型               | Chinese-STS-B-dev | Chinese-STS-B-test | 训练参数                                                     |
+| ------------------ | ----------------- | ------------------ | ------------------------------------------------------------ |
+| bert_avg           | 0.2549            | 0.2059             | batch_size=32. max_len=64, pooling=cls                       |
+| bert_whitening     | 0.7583            | 0.6888             | /                                                            |
+| sbert              | 0.8257            | 0.7837             | batch_size=32. max_len=64, epoch=2, lr=2e-5                  |
+| unsup_consert      | 0.7808            | 0.7241             | batch_size=32. max_len=64, epoch=2, lr=2e-5                  |
+| unsup_simcse       | 0.7867            | 0.7454             | batch_size=32. max_len=64, epoch=2, lr=2e-5                  |
+| sup_simcse（SNLI） | 0.6529            | 0.6550             | batch_size=32. max_len=64, epoch=1, lr=2e-5 <br />（感觉这个有问题） |
+| unsup_esimcse      | 0.7901            | 0.7393             | batch_size=32. max_len=64, epoch=4, lr=2e-5                  |
 
